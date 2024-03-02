@@ -1,4 +1,5 @@
 mod dto;
+mod handlers;
 
 use actix_web::{web, HttpResponse};
 use dto::Item;
@@ -35,6 +36,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(shared_data.clone())
+            .app_data(web::JsonConfig::default().error_handler(handlers::json_error_handler))
             .route("/items", web::post().to(create))
             .route("/items", web::get().to(index))
     })
