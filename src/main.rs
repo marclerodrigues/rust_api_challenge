@@ -2,7 +2,7 @@ mod dto;
 
 use actix_web::{web, HttpResponse};
 use dto::Item;
-use std::{sync::Mutex};
+use std::sync::Mutex;
 
 struct AppState {
     items: Mutex<Vec<Item>>,
