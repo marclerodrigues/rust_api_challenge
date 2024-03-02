@@ -238,6 +238,7 @@ name = "api-challenge"
 version = "0.1.0"
 dependencies = [
  "actix-web",
+ "serde",
 ]
 
 [[package]]

@@ -1,4 +1,7 @@
+use serde::{Serialize, Deserialize};
+
+#[derive(Serialize, Deserialize, Clone)]
 pub struct Item {
-    id: i32,
-    name: String,
+    pub id: i32,
+    pub name: String,
 }
